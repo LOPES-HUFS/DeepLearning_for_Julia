@@ -1,3 +1,6 @@
+# 줄리아가 타입 프로그래밍 언어라서 타입을 지정해주면 훨씬 빠르다.
+# Float32로 바꿔서 돌려보기
+
 """
 이 파일은 TwoLayerNet를 구성하고, MNIST 숫자 이미지를 가져온 다음
 순전파로 TwoLayerNet를 학습시키는 스크립트입니다.
@@ -20,6 +23,9 @@ end
 """
 앞에서 만든 struct를 초기화하는 함수를 작성합니다.
 """
+
+# weight_init_std은 왜 곱하는가?
+# 편향은 왜 0인가? (어떻게 바뀌는가?)
 function making_network(input_size, hidden_size, output_size, weight_init_std =0.01)
     W1 = weight_init_std * randn(Float64, input_size, hidden_size)
     b1 = zeros(Float64, 1, hidden_size)
