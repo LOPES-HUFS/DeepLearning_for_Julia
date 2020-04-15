@@ -48,7 +48,7 @@ TwoLayerNet = making_network(784, 50, 10)
 using MLDatasets
 
 train_x, train_y = MNIST.traindata()
-train_x = MNIST.convert2features(train_x)
+train_x = reshape(train_x, 784, 60000)
 t = making_one_hot_labels(train_y)
 train_x = Array{Float64}(train_x)
 x = transpose(train_x)
@@ -99,7 +99,7 @@ end
 
 test_x,  test_y  = MNIST.testdata()
 # x 자료를 다루기 위해서 변경합니다.
-x_test = MNIST.convert2features(test_x)
+x_test = reshape(test_x, 784, 10000)
 x_test = transpose(x_test)
 x_test = Array{Float64}(x_test)
 
