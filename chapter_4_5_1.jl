@@ -50,6 +50,7 @@ using MLDatasets
 train_x, train_y = MNIST.traindata()
 train_x = reshape(train_x, 784, 60000)
 t = making_one_hot_labels(train_y)
+# 배열로 변환하면 계산속도가 훨~~~~씬 빨라진다. 원래 데이터셋은 복잡하다.
 train_x = Array{Float64}(train_x)
 x = transpose(train_x)
 
