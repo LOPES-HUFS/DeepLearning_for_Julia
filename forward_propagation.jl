@@ -138,7 +138,7 @@ end
 
 using Plots
 
-# 손실 
+# 손실 함수
 x = range(1,length(train_loss_list),step=1)
 y = train_loss_list
 plot(x,y)
